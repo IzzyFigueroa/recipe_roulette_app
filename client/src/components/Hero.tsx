@@ -1,5 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useState,useEffect } from "react";
+import axios from "axios";
+
 function Hero() {
+    const [quote, setQuote] = useState('Cooking...')
+    const url = 'https://api.api-ninjas.com/v1/quotes?category=food'
+    const apiKey = 'G+iMakOXCvnF4un9ns1/cA==pQwnDdYnmVBCIXeP'
+
+   
+    useEffect(() => {
+        axios.get(url, {
+            headers: {
+                'X-Api-Key': apiKey
+            }
+        }).then((res)=> {
+            setQuote(res.data[0].quote)
+        })
+    }, [])
+
     const [searchQuery, setSearchQuery] = useState('');
 
     const handleInputChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
@@ -16,6 +34,7 @@ function Hero() {
             <div className="img"></div>
             <div className="hero-text">
                 <h1>Recipe Roulette</h1>
+                <p className="text-center">{quote}</p>
                 <form className="d-flex mt-3" onSubmit={handleSearch}>
                     <input
                         className="form-control me-2"
