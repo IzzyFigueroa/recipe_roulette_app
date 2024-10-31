@@ -106,4 +106,16 @@ footer * {
   line-height: 1.5;
 }
 
+section {
+  background-image: linear-gradient(rgba(41, 41, 41, 0.6), rgba(0, 0, 0, 0.6)), url('/images/hero_image.png');
+  margin-bottom: 50px;
+  background-size: cover;
+  min-height: 800px;
+  min-width: 50%;
+  margin-top: 5px;
+}
+div.AutoForm {
+  color: black;
+  
+}
 /* } */

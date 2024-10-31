@@ -50,7 +50,7 @@ export function StoreProvider(props: {children: ReactNode}) {
   const [state, setState] = useState(initialState);
   
   useEffect(() => {
-    axios.get('/auth/user')
+    axios.get<{ user: User }>('/auth/user')
       .then(res => {
         setState({
           ...state,
