@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import About from '../pages/About';
 
 function Header() {
     return (
@@ -12,13 +11,13 @@ function Header() {
                 <div className="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
                         <NavLink className="nav-link" to="/">Home</NavLink>
-                        <NavLink className="nav-link" to="/recipes">My Recipes</NavLink>
+                        <NavLink className="nav-link" to="/recipebook">My Recipes</NavLink>
                         <NavLink className="nav-link" to="/about">About</NavLink>
                         <NavLink className="nav-link" to="/contact">Contact</NavLink>
                     </div>
                     <div className="navbar-nav ms-auto">
-                        <NavLink className="nav-link" to="/signup">Sign Up</NavLink>
-                        <NavLink className="nav-link" to="/signin">Sign In</NavLink>
+                    <NavLink className="nav-link" to="/register">Sign Up</NavLink>
+                    <NavLink className="nav-link" to="/login">Sign In</NavLink>
                     </div>
                 </div>
             </div>
