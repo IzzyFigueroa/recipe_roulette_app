@@ -23,7 +23,7 @@ function AuthForm({ isLogin }: { isLogin: boolean }) {
     const url = isLogin ? '/auth/login' : '/auth/register';
 
     try {
-      const res = await axios.post(url, {
+      const res: any = await axios.post(url, {
         first_name: formData.first_name,
         last_name: formData.last_name,
         email: formData.email,
