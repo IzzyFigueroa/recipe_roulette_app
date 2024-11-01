@@ -30,11 +30,10 @@ function Hero() {
     };
 
     return (
-        <section className="hero">
-            <div className="img"></div>
-            <div className="hero-text">
+        <section className="hero d-flex flex-column justify-content-center align-items-center">
+            <div className="hero-text d-flex flex-column justify-content-center align-items-center">
                 <h1>Recipe Roulette</h1>
-                <p className="text-center">{quote}</p>
+                <p className="text-center w-75">{quote}</p>
                 <form className="d-flex mt-3" onSubmit={handleSearch}>
                     <input
                         className="form-control me-2"

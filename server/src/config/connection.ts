@@ -5,7 +5,8 @@ const client = new Sequelize({
   password: 'pass',
   database: 'recipe_roulette_db',
   host: 'localhost',
-  dialect: 'postgres'
+  dialect: 'postgres',
+  logging: false
 });
 
 export default client;
