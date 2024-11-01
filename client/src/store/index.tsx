@@ -9,12 +9,12 @@ import {
 } from 'react';
 import axios from 'axios';
 
-interface Shop {
+interface Recipe {
   id?: number;
-  name?: string;
-  address?: string;
-  created_at?: Date;
-  updated_at?: Date;
+  title?: string;
+  ingredients?: string;
+  servings?: string;
+  instructions?: string;
 }
 
 interface User {
@@ -25,7 +25,7 @@ interface User {
   email?: string;
   created_at?: Date;
   updated_at?: Date;
-  shops?: Shop[]
+  recipes?: Recipe
 }
 
 interface State {
@@ -52,6 +52,7 @@ export function StoreProvider(props: {children: ReactNode}) {
   useEffect(() => {
     axios.get('/auth/user')
       .then(res => {
+        console.log(res.data);
         setState({
           ...state,
           user: res.data.user,

@@ -5,7 +5,7 @@ import client from '../config/connection.js';
 const {hash, compare} = bcrypt;
 
 interface UserAttributes {
-  id: number;
+  id?: number;
   first_name: string;
   last_name: string;
   email: string;

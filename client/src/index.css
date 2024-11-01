@@ -38,25 +38,18 @@ html,body,#root {
         min-width: 50%;
   } */
 
-.img {
+.hero {
   background-image: linear-gradient(rgba(41, 41, 41, 0.6), rgba(0, 0, 0, 0.6)), url('/images/hero_image.png');
   background-size: cover;
-  min-height: 800px;
-  min-width: 50%;
+  min-height: 90vh;
 }
 
 .hero-text {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   min-width: 50%;
+  position: relative;
+  top: -135px;
 
   h1 {
     font-size: 4rem;
@@ -70,7 +63,6 @@ html,body,#root {
 .aboutimg {
   background-image: linear-gradient(rgba(184, 184, 184, 0.6), rgba(0, 0, 0, 0.6)), url('/images/about_image.png');
   background-size: cover;
-  min-height: 800px;
   min-width: 50%;
 }
 .about-text {
@@ -92,7 +84,6 @@ html,body,#root {
 .recipe-bookimg {
   background-image: linear-gradient(rgba(41, 41, 41, 0.6), rgba(0, 0, 0, 0.6)), url('/images/recipe_book_image.png');
   background-size: cover;
-  min-height: 1200px;
   min-width: 50%;
 }
 
@@ -142,7 +133,6 @@ section {
   background-image: linear-gradient(rgba(41, 41, 41, 0.6), rgba(0, 0, 0, 0.6)), url('https://fal.media/files/tiger/oTtBmzuEwByUPUFbvq47P.png');
   /* margin-bottom: 50px; */
   background-size: cover;
-  min-height: 800px;
   min-width: 50%;
   margin-top: 5px;
   

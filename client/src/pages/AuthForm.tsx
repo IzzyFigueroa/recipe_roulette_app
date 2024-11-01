@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, NavLink } from 'react-router-dom';
 import axios from 'axios';
+import { useStore } from '../store';
 
 const initialFormData = {
   first_name: '',
@@ -13,6 +14,7 @@ const initialFormData = {
 function AuthForm({ isLogin }: { isLogin: boolean }) {
   const [formData, setFormData] = useState(initialFormData);
   const navigate = useNavigate();
+  const store = useStore();
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -29,6 +31,10 @@ function AuthForm({ isLogin }: { isLogin: boolean }) {
       });
 
       if (res.status === 200) {
+        store?.setState((oldState) => ({
+          ...oldState,
+          user: res.data.user
+        }));
         navigate('/');
       }
     } catch (error: any) {
