@@ -9,13 +9,14 @@ function RecipeSave() {
     console.log('USER', user);
 
     useEffect(() => {
-        if (user?.id){
-        axios.post('/api/recipes', user)
-            .then(res => {
-                console.log(res.data);
-                setUserRecipes(res.data);
-            });
-    }}, [user])
+        if (user?.id) {
+            axios.post('/api/recipes', user)
+                .then(res => {
+                    console.log(res.data);
+                    setUserRecipes(res.data);
+                });
+        }
+    }, [user])
 
     return (
         <>
@@ -29,7 +30,10 @@ function RecipeSave() {
                                     <h5 className="card-title">{recipe.title}</h5>
                                     <p className="card-ingredients">{recipe.ingredients}</p>
                                     <p className="card-servings">{recipe.servings}</p>
-                                    <p className="card-instructions">{recipe.instructions}</p>
+                                    <details className="flex-fill">
+                                        <summary>Instructions: </summary>
+                                        {recipe.instructions}
+                                    </details>
                                 </div>
                             </div>
                         </div>
