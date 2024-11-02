@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Recipe } from '../interfaces';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 interface RecipesProps {
 
@@ -17,7 +17,7 @@ interface RecipesProps {
 
 function Recipes ({recipes, searchQuery, user}: RecipesProps) {
     console.log(recipes);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const [addedRecipes, setAddedRecipes] = useState([]);
     console.log('USER',user);
@@ -29,7 +29,7 @@ function Recipes ({recipes, searchQuery, user}: RecipesProps) {
         });
         console.log(response);
         setAddedRecipes([...addedRecipes, index]);
-        navigate('/recipebook')
+        // navigate('/recipebook')
       } catch (error) {
         console.error('Error fetching recipes:', error);
       }
