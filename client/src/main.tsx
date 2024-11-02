@@ -8,10 +8,10 @@ import { StoreProvider } from './store/index.tsx';
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <StoreProvider>
-            <BrowserRouter>
+        <BrowserRouter>
+            <StoreProvider>
                 <App />
-            </BrowserRouter>
-        </StoreProvider>
+            </StoreProvider>
+        </BrowserRouter>
     </StrictMode>
 )

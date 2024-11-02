@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import { Recipe } from '../interfaces';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 interface RecipesProps {
 
@@ -6,10 +9,32 @@ interface RecipesProps {
 
     recipes: Recipe[];
 
+    user: {};
+
+    index: number;
+
 }
 
-function Recipes ({recipes, searchQuery}: RecipesProps) {
+function Recipes ({recipes, searchQuery, user}: RecipesProps) {
     console.log(recipes);
+    const navigate = useNavigate();
+
+    const [addedRecipes, setAddedRecipes] = useState([]);
+    console.log('USER',user);
+    const addRecipe = async (e: React.FormEvent<HTMLFormElement>, recipe: any, user: any, index: number) => {
+      e.preventDefault();
+      try {
+        const response = await axios.post('/api/addrecipe', {
+          recipe, user
+        });
+        console.log(response);
+        setAddedRecipes([...addedRecipes, index]);
+        navigate('/recipebook')
+      } catch (error) {
+        console.error('Error fetching recipes:', error);
+      }
+    };
+
     return (
         <div className="container my-4">
           <h1 className="text-center mb-4">{searchQuery} Recipes:</h1>
@@ -25,7 +50,7 @@ function Recipes ({recipes, searchQuery}: RecipesProps) {
                         <summary>Instructions: </summary>
                         {recipe.instructions}
                     </details>
-                    <button className="btn btn-success mt-3">Add Book To Recipes</button>
+                    {addedRecipes.includes(index) ? <button className="btn btn-secondary" disabled>Saved To Recipe Book</button> : <button className="btn btn-success mt-3" onClick={(e) => addRecipe(e, recipe, user, index)}>Add Book To Recipes</button>}
                   </div>
                 </div>
               </div>
