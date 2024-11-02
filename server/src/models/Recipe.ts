@@ -5,8 +5,9 @@ interface RecipeAttributes {
   id?: number;
   title: string;
   ingredients: string;
-  servings: number;
+  servings: string;
   instructions: string;
+  user_id: number;
 }
 
 interface RecipeCreationAttributes extends Optional<RecipeAttributes, 'id'> {}
@@ -15,8 +16,9 @@ class Recipe extends Model<RecipeAttributes, RecipeCreationAttributes> implement
   public id!: number;
   public title!: string;
   public ingredients!: string;
-  public servings!: number;
+  public servings!: string;
   public instructions!: string;
+  public user_id!: number;
 
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
@@ -38,12 +40,19 @@ Recipe.init(
       allowNull: false,
     },
     servings: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     instructions: {
       type: DataTypes.TEXT,
       allowNull: false,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'users', key: 'id',
+      }
     }
   },
   {
