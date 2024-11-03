@@ -3,8 +3,19 @@ import { useStore } from "../store";
 import { useState, useEffect } from "react";
 
 function RecipeSave() {
-    const [userRecipes, setUserRecipes] = useState([]);
-    const { state } = useStore();
+    interface Recipe {
+        title: string;
+        ingredients: string;
+        servings: string;
+        instructions: string;
+    }
+
+    const [userRecipes, setUserRecipes] = useState<Recipe[]>([]);
+    const store = useStore();
+    if (!store) {
+        return <div>Error: Store is not available</div>;
+    }
+    const { state } = store;
     const { user } = state;
     console.log('USER', user);
 

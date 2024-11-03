@@ -7,7 +7,11 @@ import { useStore } from "../store";
 function Landing() {
     const [recipes, setRecipes] = useState<Recipe[]>([]);
     const [searchQuery, setSearchQuery] = useState('');
-    const {state, setState} = useStore(); 
+    const store = useStore();
+    if (!store) {
+        return 'loading';
+    }
+    const { state } = store;
     if (state.loading) return 'loading';
     console.log('USER 2', state.user)
 
@@ -15,7 +19,7 @@ function Landing() {
         <>
             <Hero searchQuery={searchQuery} setSearchQuery={setSearchQuery} setRecipes={setRecipes} />
 
-            <Recipes searchQuery={searchQuery} recipes={recipes} user={state.user} />
+            <Recipes searchQuery={searchQuery} recipes={recipes} user={state.user} index={0} />
         </>
     )
 }
