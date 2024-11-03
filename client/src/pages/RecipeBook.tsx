@@ -5,7 +5,7 @@ function RecipeBook() {
   return (
     <>
       <div className="recipe-bookimg">
-          <h1 className="text-white text-center">Recipe Book</h1>
+          <h1 className="text-white text-center p-3">Recipe Book</h1>
 
           <RecipeSave />
       </div>

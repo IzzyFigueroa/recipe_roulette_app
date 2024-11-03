@@ -54,7 +54,7 @@ function AuthForm({ isLogin }: { isLogin: boolean }) {
   };
 
   return (
-    <section className="row mt-5">
+    <section className="row">
       <form onSubmit={handleSubmit} className="col-4 mx-auto">
         <h2 className="text-center text-white mt-3 mb-3">{isLogin ? 'Sign In' : 'Sign Up'}</h2>
 
