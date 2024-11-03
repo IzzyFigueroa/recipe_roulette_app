@@ -16,7 +16,6 @@ function Header() {
         navigate('/');
     }
 
-
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
@@ -38,8 +37,9 @@ function Header() {
                             <NavLink className="nav-link" to="/login">Sign In</NavLink>
                         </>
                     ) : (
-                        <a onClick={logoutUser} className="nav-link" href="/logout">Log Out</a>
-
+                        <>
+                            <a onClick={logoutUser} className="nav-link" href="/logout">Log Out</a>
+                        </>
                     )}
                     </div>
                 </div>
