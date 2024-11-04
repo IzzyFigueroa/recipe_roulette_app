@@ -61,6 +61,7 @@ This button directs you to the app's Contact page.<br>
 ![screenshot of contact page](<client/public/images/contact.png>)<br><br>
  
 
+
 ## Credits
 
 Shout out to our collaborators: 
