@@ -38,18 +38,18 @@ You're ready to develop!
 ## Usage
 **Landing Page Search** <br>
 Anyone will be able to search for a recipe. If a user is logged in, populated recipes can be stored to their personal profiles.<br>
- ![screenshot of recipe search](<client/public/images/recipesearch.png>)<br><br>
- ![screenshot of add recipe](<client/public/images/Tiramisu.png>)<br><br>
+ ![screenshot of landing page](client/public/images/landing.png)<br><br>
 
 **Sign Up / Sign In** <br>
 This feature on in our applications allows users to have a personalized experience. When a user makes an account, they have the ability to search for recipes on our landing page and store them to their personal profiles so they always know where they are. If someone is not logged in or does not had a profile, they will be able to search recipes but not store them. They will see a tag on the recipe that says "Sign up to save"<br>
- ![screenshot of landing page](client/public/images/landing.png)<br><br>
  ![screenshot of sign up to save](client/public/images/cantAdd.png)<br><br>
  ![screenshot of sign up page](<client/public/images/Signup.png>)<br><br>
 
 **My Recipes Page** <br>
 This tab in the nav bar will only be seen when one of our users is logged in to their profile. They will be able to see all stored recipes.<br>
-![screenshot of saved recipes](<client/public/images/savedrecipes.png>)<br><br>
+ ![screenshot of recipe search](<client/public/images/recipesearch.png>)<br><br>
+ ![screenshot of add recipe](<client/public/images/Tiramisu.png>)<br><br>
+ ![screenshot of saved recipes](<client/public/images/savedrecipes.png>)<br><br>
  
 
 **About:** <br>
@@ -73,6 +73,11 @@ Shout out to our collaborators:
 - [Bootstrap](https://getbootstrap.com/)
 - [Render](https://render.com/)
 - [ApiNinjas](https://api-ninjas.com/)
+
+## Links: 
+
+Github: https://github.com/IzzyFigueroa/recipe_roulette_app <br><br>
+Deployed App: 
 
 ## License
 
