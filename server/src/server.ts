@@ -20,7 +20,7 @@ app.use(cookieParser());
 
 app.use('/', routes);
 
-await client.sync({ force: true });
+await client.sync({ force: false });
 
 // Render related code for deployment
 if (process.env.PORT) {
