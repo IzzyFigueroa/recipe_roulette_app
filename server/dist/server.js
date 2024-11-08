@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3333;
 app.use(express.json());
 app.use(cookieParser());
 app.use('/', routes);
-await client.sync({ force: true });
+await client.sync({ force: false });
 // Render related code for deployment
 if (process.env.PORT) {
     const __filename = fileURLToPath(import.meta.url);
